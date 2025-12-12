@@ -270,7 +270,7 @@ This prototype is based on:
 ## Contact
 
 For questions about this prototype or the  Sales-to-Setup initiative:
-- Project Lead: Danelle.Tate@evernorth.com
+- Project Lead: TCS
 
 ---
 
