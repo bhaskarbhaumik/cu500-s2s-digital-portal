@@ -1,0 +1,268 @@
+/* Account Setup Styles */
+
+.account-setup {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  margin-bottom: var(--spacing-lg);
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--cigna-blue);
+}
+
+.setup-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.setup-header h1 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.setup-header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* Progress Stepper */
+.progress-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-2xl);
+  padding: 0 var(--spacing-md);
+}
+
+.stepper-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stepper-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: var(--spacing-sm);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.stepper-step.active .stepper-circle {
+  background: var(--cigna-blue);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(0, 128, 201, 0.2);
+}
+
+.stepper-step.completed .stepper-circle {
+  background: var(--cigna-green);
+  color: white;
+}
+
+.stepper-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+}
+
+.stepper-step.active .stepper-label {
+  color: var(--cigna-blue);
+  font-weight: 600;
+}
+
+.stepper-step.completed .stepper-label {
+  color: var(--cigna-green);
+}
+
+.stepper-line {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+  background: var(--gray-300);
+  z-index: 1;
+}
+
+.stepper-step.completed .stepper-line {
+  background: var(--cigna-green);
+}
+
+/* Setup Card */
+.setup-card {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h2 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.step-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--cigna-blue);
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.grid-full {
+  grid-column: 1 / -1;
+}
+
+/* Review Sections */
+.review-section {
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.review-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.review-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.review-value {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+/* Setup Footer */
+.setup-footer {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border);
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-save {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-progress {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progress-stepper {
+    padding: 0;
+  }
+
+  .stepper-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .stepper-label {
+    font-size: var(--font-size-xs);
+  }
+
+  .stepper-line {
+    top: 25px;
+  }
+
+  .form-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .footer-save {
+    order: -1;
+    width: 100%;
+  }
+
+  .footer-save .btn {
+    width: 100%;
+  }
+}

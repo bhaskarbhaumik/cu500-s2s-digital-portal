@@ -1,0 +1,32 @@
+root {
+  --logo-fill: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --logo-fill: #ffffff;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-md);
+  }
+}

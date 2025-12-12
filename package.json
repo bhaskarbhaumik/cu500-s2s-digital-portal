@@ -1,0 +1,23 @@
+{
+  "name": "cigna-u500-digital-portal",
+  "version": "1.0.0",
+  "description": "Cigna U500 Sales-to-Setup Digital Portal for Client/Broker",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.35.0"
+  }
+}

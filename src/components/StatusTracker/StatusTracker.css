@@ -1,0 +1,610 @@
+/* Status Tracker Styles - Pizza Tracker */
+
+.status-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Pizza Tracker Main */
+.pizza-tracker-main {
+  background: linear-gradient(135deg, var(--cigna-blue) 0%, var(--cigna-blue-dark) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  color: white;
+  box-shadow: var(--shadow-xl);
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+  gap: var(--spacing-xl);
+}
+
+.tracker-info {
+  flex: 1;
+}
+
+.case-id {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tracker-info h2 {
+  font-size: var(--font-size-4xl);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.effective-date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  opacity: 0.95;
+}
+
+.effective-date i {
+  font-size: 20px;
+}
+
+/* Progress Circle */
+.tracker-progress-circle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.progress-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.progress-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-percentage {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.progress-label {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  margin-top: var(--spacing-xs);
+}
+
+/* Tracker Stats */
+.tracker-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.stat-box .stat-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.stat-box .stat-content {
+  flex: 1;
+}
+
+.stat-box .stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-box .stat-label {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+/* Visual Timeline */
+.visual-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-xl) 0;
+}
+
+.timeline-milestone {
+  display: grid;
+  grid-template-columns: 60px 80px 1fr;
+  gap: var(--spacing-xl);
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin: 0 calc(-1 * var(--spacing-lg));
+}
+
+.timeline-milestone:hover {
+  background: var(--gray-50);
+}
+
+.timeline-connector {
+  position: relative;
+}
+
+.connector-line {
+  position: absolute;
+  left: 50%;
+  top: -var(--spacing-2xl);
+  bottom: calc(100% + var(--spacing-md));
+  width: 3px;
+  background: var(--gray-300);
+  transform: translateX(-50%);
+}
+
+.connector-line.completed {
+  background: var(--cigna-green);
+}
+
+.timeline-node {
+  display: flex;
+  justify-content: center;
+}
+
+.node-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  border: 4px solid;
+  background: var(--background);
+  position: relative;
+  z-index: 2;
+}
+
+.milestone-completed .node-circle {
+  background: var(--cigna-green);
+  border-color: var(--cigna-green);
+  color: white;
+}
+
+.milestone-in_progress .node-circle {
+  background: var(--cigna-orange);
+  border-color: var(--cigna-orange);
+  color: white;
+  animation: pulse-glow 2s infinite;
+}
+
+.milestone-pending .node-circle {
+  border-color: var(--gray-300);
+  background: var(--gray-50);
+}
+
+.node-number {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--gray-400);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(250, 152, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(250, 152, 0, 0);
+  }
+}
+
+/* Timeline Content */
+.timeline-content {
+  padding: var(--spacing-sm) 0;
+}
+
+.milestone-badge-wrapper {
+  margin-bottom: var(--spacing-sm);
+}
+
+.milestone-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.milestone-status-badge.completed {
+  background: #E8F5E9;
+  color: var(--cigna-green-dark);
+}
+
+.milestone-status-badge.in-progress {
+  background: #FFF4E5;
+  color: var(--cigna-orange-dark);
+}
+
+.milestone-status-badge.pending {
+  background: var(--gray-200);
+  color: var(--gray-600);
+}
+
+.milestone-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: var(--spacing-sm) 0;
+}
+
+.milestone-desc {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.milestone-footer {
+  margin-top: var(--spacing-md);
+}
+
+.milestone-date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.milestone-date i {
+  font-size: 16px;
+}
+
+.milestone-date.pending {
+  color: var(--text-disabled);
+}
+
+.milestone-completed .milestone-date {
+  color: var(--cigna-green);
+}
+
+.milestone-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.milestone-progress-bar .progress-bar {
+  flex: 1;
+}
+
+.progress-text {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--cigna-orange);
+  white-space: nowrap;
+}
+
+/* Milestone Tasks */
+.milestone-tasks {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--cigna-orange);
+}
+
+.milestone-tasks h5 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.milestone-tasks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.milestone-tasks li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
+}
+
+.milestone-tasks li i {
+  font-size: 16px;
+}
+
+.milestone-tasks li.task-completed {
+  color: var(--cigna-green);
+}
+
+.milestone-tasks li.task-in_progress {
+  color: var(--cigna-orange);
+  font-weight: 500;
+}
+
+.milestone-tasks li.task-pending {
+  color: var(--gray-500);
+}
+
+/* Progress Overview Grid */
+.progress-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.overview-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.overview-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.overview-icon.completed {
+  background: #E8F5E9;
+  color: var(--cigna-green);
+}
+
+.overview-icon.in-progress {
+  background: #FFF4E5;
+  color: var(--cigna-orange);
+}
+
+.overview-icon.pending {
+  background: var(--gray-200);
+  color: var(--gray-500);
+}
+
+.overview-icon.days {
+  background: var(--cigna-blue-pale);
+  color: var(--cigna-blue);
+}
+
+.overview-content {
+  flex: 1;
+}
+
+.overview-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.overview-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Key Dates */
+.key-dates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.date-item {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--gray-300);
+}
+
+.date-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: var(--gray-200);
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.date-icon.active {
+  background: var(--cigna-blue-pale);
+  color: var(--cigna-blue);
+}
+
+.date-content {
+  flex: 1;
+}
+
+.date-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.date-value {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.date-note {
+  font-size: var(--font-size-xs);
+  color: var(--text-disabled);
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xl);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  gap: var(--spacing-sm);
+}
+
+.team-avatar-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--cigna-blue-light);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.team-title {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.team-company {
+  font-size: var(--font-size-xs);
+  color: var(--text-disabled);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Tracker Actions */
+.tracker-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.action-right {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tracker-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tracker-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .key-dates,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-milestone {
+    grid-template-columns: 40px 60px 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .node-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .milestone-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .progress-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tracker-actions {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .action-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .action-right .btn {
+    width: 100%;
+  }
+
+  .stat-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
