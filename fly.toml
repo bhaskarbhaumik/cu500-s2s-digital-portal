@@ -1,0 +1,66 @@
+# Cigna U500 Digital Portal - Fly.io Configuration
+# App Config Reference: https://fly.io/docs/reference/configuration/
+
+# Application name (must be unique across Fly.io)
+app = "cu500-s2s-digital-portal"
+
+# Primary region for deployment
+primary_region = "iad" # Washington, D.C. (Ashburn, VA)
+
+# Kill signal and grace period
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+# Build configuration
+[build]
+  # Use Dockerfile in root directory
+  dockerfile = "Dockerfile"
+
+# Environment variables
+[env]
+  PORT = "8080"
+  NODE_ENV = "production"
+
+# HTTP service configuration
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  # Concurrency settings
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 1000
+    soft_limit = 500
+
+# Health check configuration
+[[http_service.checks]]
+  interval = "15s"
+  timeout = "10s"
+  grace_period = "30s"
+  method = "GET"
+  path = "/health"
+  protocol = "http"
+  tls_skip_verify = false
+
+  [http_service.checks.headers]
+    User-Agent = "Fly-Health-Check"
+
+# VM resources
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
+# Metrics configuration (optional)
+[metrics]
+  port = 9091
+  path = "/metrics"
+
+# Static asset handling
+[[statics]]
+  guest_path = "/app/dist"
+  url_prefix = "/assets"
