@@ -1,4 +1,4 @@
-# Cigna U500 Digital Portal - Makefile
+# Digital Portal - Makefile
 # Convenient shortcuts for Node.js and Git/GitHub commands
 
 .PHONY: help
@@ -11,7 +11,7 @@ RESET := \033[0m
 ##@ Help
 
 help: ## Display this help message
-	@echo "$(CYAN)Cigna U500 Digital Portal - Available Commands$(RESET)"
+	@echo "$(CYAN)Digital Portal - Available Commands$(RESET)"
 	@echo ""
 	@awk 'BEGIN {FS = ":.*##"; printf ""} /^[a-zA-Z_-]+:.*?##/ { printf "  $(CYAN)%-20s$(RESET) %s\n", $$1, $$2 } /^##@/ { printf "\n%s\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 

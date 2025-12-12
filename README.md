@@ -1,10 +1,10 @@
-# Cigna U500 Digital Portal - Sales to Setup
+#  Digital Portal - Sales to Setup
 
 ## Overview
 
-The **Cigna U500 Digital Portal for Client/Broker** is the unified, self-service digital "front door" for clients and brokers in the Sales-to-Setup business process. This portal replaces manual intake processes (emails, spreadsheets, forms) with a modern, automated, and transparent digital pipeline.
+The ** Digital Portal for Client/Broker** is the unified, self-service digital "front door" for clients and brokers in the Sales-to-Setup business process. This portal replaces manual intake processes (emails, spreadsheets, forms) with a modern, automated, and transparent digital pipeline.
 
-This is an "art-of-possible" UI prototype demonstrating the complete digital transformation initiative for Cigna's U500 client installation process.
+This is an "art-of-possible" UI prototype demonstrating the complete digital transformation initiative for client installation process.
 
 ## Project Purpose
 
@@ -75,13 +75,13 @@ This prototype demonstrates how to reduce the current 65-day installation proces
 - **React 18.3.1** - UI framework
 - **React Router 6.26** - Client-side routing
 - **Vite 5.4** - Build tool and dev server
-- **CSS Variables** - Theming with Cigna brand colors
-- **SVG Graphics** - Official Cigna Group logo
+- **CSS Variables** - Theming with brand colors
+- **SVG Graphics** - Official Group logo
 - **Nerd Fonts** - Icon system for UI elements
 
-## Cigna Brand Colors
+## Brand Colors
 
-The UI uses official Cigna brand colors:
+The UI uses official brand colors:
 - **Primary Blue:** #0080C9
 - **Orange:** #FA9800
 - **Green:** #52BB40
@@ -102,7 +102,7 @@ src/
 ├── data/
 │   └── mockData.js         # Static data for prototype demonstration
 ├── styles/
-│   └── global.css          # Global styles and Cigna brand theme
+│   └── global.css          # Global styles and brand theme
 ├── App.jsx                 # Main app with routing
 └── main.jsx               # Application entry point
 ```
@@ -269,7 +269,7 @@ This prototype is based on:
 
 ## Contact
 
-For questions about this prototype or the Cigna U500 Sales-to-Setup initiative:
+For questions about this prototype or the  Sales-to-Setup initiative:
 - Project Lead: Danelle.Tate@evernorth.com
 
 ---
